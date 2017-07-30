@@ -1,0 +1,53 @@
+
+  <div class="card">
+    <article>
+    <!--
+    {{#if feature_image}}
+      <div class="row">
+        <div class="col-md-8">
+          <a href="{{url}}">
+            <div class="card-img" style="background: url({{feature_image}}) no-repeat center center;">
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+    {{/if}}
+      <div class="card-block post-card">
+        <a href="{{url}}">
+        <header class="post-card-header">
+          <h4 class="card-title">{{title}}</h4>
+        </header>
+        <section>
+          <p>{{excerpt words="33"}}...</p>
+        </section>
+      </a>
+      </br>
+      <a class="card-link" href="{{@blog.url}}/author/{{author.slug}}">{{author}}</a> / {{#if tags}}
+        <a href="{{@blog.url}}/tag/{{tags.[0].slug}}">{{tags.[0].name}}</a>
+      {{/if}}
+    </div>
+  {{#if feature_image}}
+    </div>
+  </div>
+  {{/if}}
+-->
+
+    {{#if feature_image}}
+    <img class="card-img-top img-fluid" src="{{feature_image}}" alt="Blog Post Image">
+    {{/if}}
+      <div class="card-block post-card">
+        <a href="{{url}}">
+        <header class="post-card-header">
+          <h4 class="card-title">{{title}}</h4>
+        </header>
+        <section>
+          <p class="card-text">{{excerpt words="33"}}...</p>
+        </section>
+      </a>
+    </div>
+    <div class="card-footer">
+      {{#if author.profile_image}}<img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" />{{/if}}<a class="card-link" href="{{@blog.url}}/author/{{author.slug}}">{{author}}</a> / <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+      {{#if tags}}/ <a href="{{@blog.url}}/tag/{{tags.[0].slug}}">{{tags.[0].name}}</a>{{/if}}
+    </div>
+    </article>
+  </div>

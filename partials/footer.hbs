@@ -1,0 +1,27 @@
+<footer class="footer" data-background-color="black">
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="{{@blog.url}}">{{@blog.title}}</a>
+        </li>
+        {{#if @blog.facebook}}
+        <li>
+          <a href="{{facebook_url @blog.facebook}}" target="_blank">Facebook</a>
+        </li>
+        {{/if}}
+        {{#if @blog.twitter}}
+        <li>
+          <a href="{{twitter_url @blog.twitter}}" target="_blank">Twitter</a>
+        </li>
+        {{/if}}
+      </ul>
+    </nav>
+    <div class="copyright">
+      &copy;
+      <script>
+        document.write(new Date().getFullYear())
+      </script>, "Ghost Of The Now" Theme by <a href="https://matthewwang.me">Matthew Wang</a>
+    </div>
+  </div>
+</footer>

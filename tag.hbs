@@ -1,0 +1,33 @@
+{{!< default}}
+
+<div class="main">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        {{#tag}}
+        <div class="col-md-4">
+          <div class="card card-outline-primary">
+            <div class="card-block">
+              <div class="text-center">
+                <h1>{{name}}</h1>
+                <p class="card-text">
+                  {{#if description}}
+                      {{description}}
+                  {{else}}
+                      A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                  {{/if}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/tag}}
+        <div class="col-md-8">
+          {{#foreach posts}}
+            {{> "post-card"}}
+          {{/foreach}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

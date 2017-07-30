@@ -1,0 +1,38 @@
+<nav class="navbar navbar-toggleable-md bg-primary fixed-top">
+  <div class="container">
+    <div class="navbar-translate">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </button>
+
+      <a class="navbar-brand" href="{{@blog.url}}">
+        {{@blog.title}}
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{@blog.url}}">
+            Home
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        {{#if @blog.facebook}}
+        <li class="nav-item">
+          <a class="nav-link" href="{{facebook_url}}" target="_blank"><span class="fa fa-2x fa-facebook"></span><span class="hidden-lg-up"> Facebook</span></a>
+        </li>
+        {{/if}}
+        {{#if @blog.twitter}}
+        <li class="nav-item">
+          <a class="nav-link" href="{{twitter_url}}" target="_blank"><span class="fa fa-2x fa-twitter"></span><span class="hidden-lg-up">Twitter</span></a>
+        </li>
+        {{/if}}
+      </ul>
+    </span>
+    </div>
+  </div>
+</nav>

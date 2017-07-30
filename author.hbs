@@ -1,0 +1,51 @@
+{{!< default}}
+
+<div class="main">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        {{#author}}
+        <div class="col-md-4">
+          <div class="card card-outline-primary">
+            <div class="card-block">
+              <div class="text-center">
+                {{#if profile_image}}
+                <img class="img-fluid" src="{{profile_image}}" alt="{{name}}" />
+                {{/if}}
+                <h1>{{name}}</h1>
+                <div>
+                  {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+                </div>
+                <div class="fa-3x">
+                  {{#if website}}
+                  <a href="{{website}}" target="_blank"><span class="fa fa-link"></span></a>
+                  {{/if}}
+                  {{#if twitter}}
+                  <a href="{{twitter_url}}" target="_blank"><span class="fa fa-twitter"></span></a>
+                  {{/if}}
+                  {{#if facebook}}
+                  <a href="{{facebook_url}}" target="_blank"><span class="fa fa-facebook"></span></a>
+                  {{/if}}
+                  <a href="http://cloud.feedly.com/#subscription/feed/{{url absolute="true"}}/rss/" target="_blank"><span class="fa fa-rss"></span></a>
+                </div>
+                <p class="card-text">
+                  {{#if bio}}
+                  {{bio}}
+                  {{else}}
+                  An author on {{@blog.title}}.
+                  {{/if}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/author}}
+        <div class="col-md-8">
+          {{#foreach posts}}
+            {{> "post-card"}}
+          {{/foreach}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

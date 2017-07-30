@@ -1,0 +1,29 @@
+{{!< default}}
+
+<div class="main">
+  <div class="section">
+    <div class="post-container">
+      <div class="container">
+        {{#post}}
+        <article>
+          {{#if feature_image}}
+            <img class="img-fluid rounded img-raised mx-auto d-block" src="{{feature_image}}" style="max-width:50%;"></img>
+          {{/if}}
+          <header class="mt-2">
+            <div class="text-center">
+              <h1>{{title}}</h1>
+              by {{author}} / <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+              {{#if tags}}
+                  / <a href="{{@blog.url}}/tag/{{tags.[0].slug}}">{{tags.[0].name}}</a>
+              {{/if}}
+            </div>
+          </header>
+          <section>
+           {{content}}
+          </section>
+        </article>
+        {{/post}}
+      </div>
+    </div>
+  </div>
+</div>

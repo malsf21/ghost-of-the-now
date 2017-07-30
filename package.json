@@ -1,0 +1,30 @@
+{
+    "name": "ghost-of-the-now",
+    "description": "A Ghost theme implementing the Now UI Kit by Creative-Tim and Invision.",
+    "version": "1.0.0",
+    "homepage": "https://github.com/malsf21/ghost-of-the-now/",
+    "engines": {
+        "ghost": ">=1.0.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Matthew Wang",
+        "email": "matt@matthewwang.me",
+        "url": "https://matthewwang.me"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "bootstrap",
+        "now"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/malsf21/ghost-of-the-now.git"
+    },
+    "bugs": "https://github.com/malsf21/ghost-of-the-now/issues",
+    "contributors": "https://github.com/malsf21/ghost-of-the-now/graphs/contributors",
+    "config": {
+        "posts_per_page": 10
+    }
+}

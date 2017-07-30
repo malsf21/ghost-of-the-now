@@ -1,0 +1,19 @@
+.post-card a{
+  color: black;
+  text-decoration: none;
+}
+.card-img{
+  color: #fff;
+  height: 100%;
+  width: auto;
+  background-size: cover;
+}
+.post-container{
+  margin: 0 auto;
+  max-width: 50rem;
+}
+.author-profile-image {
+  margin-right: 0.5em;
+  width: 2em;
+  height: 2em;
+}

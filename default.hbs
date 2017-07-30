@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      {{!-- Document Settings --}}
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+      {{!-- Base Meta --}}
+      <title>{{meta_title}}</title>
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      {{!-- CSS --}}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
+      <link rel="stylesheet" type="text/css" href="{{asset "css/now-ui-kit.css"}}" />
+      <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+
+      {{!-- This tag outputes SEO meta+structured data and other important settings --}}
+      {{ghost_head}}
+
+  </head>
+
+  <body class="{{body_class}}">
+    {{> nav}}
+    <div class="wrapper">
+      {{{body}}}
+    </div>
+    {{> footer}}
+
+    <script src="{{asset "js/jquery.3.2.1.min.js"}}"></script>
+    <!--
+    <script src="{{asset "js/tether.min.js"}}"></script>
+    <script src="{{asset "js/nouislider.min.js"}}"></script>
+    -->
+    <script src="{{asset "js/bootstrap.min.js"}}"></script>
+    <script src="{{asset "js/now-ui-kit.js"}}"></script>
+    <!--
+    <script src="{{asset "js/bootstrap-datepicker.js"}}"></script>
+    <script src="{{asset "js/bootstrap-switch.js"}}"></script>
+    -->
+
+    {{#if pagination.pages}}
+    <script>
+        var maxPages = parseInt('{{pagination.pages}}');
+    </script>
+    <script src="{{asset "js/infinitescroll.js"}}"></script>
+    {{/if}}
+
+    {{{block "scripts"}}}
+    {{ghost_foot}}
+  </body>
+</html>

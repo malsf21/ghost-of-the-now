@@ -1,0 +1,38 @@
+{{!< default}}
+
+<div class="main">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-outline-primary">
+            <div class="card-block">
+              {{#if @blog.logo}}
+                  <img class="img-fluid" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                {{else}}
+                  <h2 class="text-primary">{{@blog.title}}</h2>
+                {{/if}}
+              {{#if @blog.description}}
+              {{@blog.description}}
+              {{/if}}
+              <div class="fa-3x">
+                {{#if @blog.twitter}}
+                <a href="{{twitter_url}}" target="_blank"><span class="fa fa-twitter"></span></a>
+                {{/if}}
+                {{#if facebook}}
+                <a href="{{facebook_url}}" target="_blank"><span class="fa fa-facebook"></span></a>
+                {{/if}}
+                <a href="http://cloud.feedly.com/#subscription/feed/{{url absolute="true"}}/rss/" target="_blank"><span class="fa fa-rss"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          {{#foreach posts}}
+            {{> "post-card"}}
+          {{/foreach}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
